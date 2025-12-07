@@ -10,11 +10,8 @@ params = {
 }   
 response = requests.get(url, params=params)
 data = response.json()
-#print(json.dumps(data, indent=4))
-
 
 rates = data['conversion_rates']
-print(rates)
 
 def currency_convertor(amount, from_currency, to_currency):
     if from_currency != 'USD':
@@ -24,7 +21,6 @@ def currency_convertor(amount, from_currency, to_currency):
         
     return amount
 
-print(currency_convertor(100, 'AED', 'EUR'))
 while True:
     print("Select from available currencies: ")
     for x in rates.keys():
